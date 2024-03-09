@@ -28,9 +28,9 @@ export const HW3 = () => {
   return (
     <div id={"hw03"}>
       {currentText ? (
-        <h1 id={"hw03-text"}>ЗДЕСЬ ХОТЕЛОСЬ БЫ УВИДЕТЬ ВВОДИМЫЙ ТЕКСТ</h1>
+        <h1 id={"hw03-text"}>{currentText}</h1>
       ) : (
-        <h1 id={"hw03-default-text"}>Здесь появится новое дело</h1>
+        <h1 id={"hw03-default-text"}>{texts[0]}</h1>
       )}
 
       <input
@@ -63,3 +63,9 @@ export const HW3 = () => {
     </div>
   );
 };
+// AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Test task' within the element: <h1#hw03-text> but never did.
+//     at Context.eval (webpack:///../../../../../src/tests/cypress/integration/front-homework-0.3/homework-0.3.cy.ts:21:25)
+// const testTaskText = 'Test task';
+// local_cypress_1.cy.get('#hw03-input').type(testTaskText);
+// local_cypress_1.cy.get('#hw03-input').should('have.value', testTaskText);
+// local_cypress_1.cy.get('#hw03-text').contains(testTaskText);
